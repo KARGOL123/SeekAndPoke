@@ -1,18 +1,23 @@
 #Author KARGOL
-#Not sure what this thing is gonna look like at the end
+#Terminal based game about finding flags
 
-import sounddevice as sd
-import soundfile as sf
+#note: add the f command and a progress saving system with a debug function to reset it and do some other stuff
 
-audio, samplerate = sf.read('Assets/Music/OpsecMusic.wav')
+import Build.functions as functions
+import Build.longStrings as longStrings
+import os
 
-def HelloWorld(t):
-    if t == 'print':
-        input('Secret code activated, press enter to proceed')
-        print("Welcome to Opsec.")
-        sd.play(audio, samplerate)
-        sd.wait()
-    else:
-        print(t)
+loopBreak = 'no'
+functions.artPrint('Seek & Poke','slant','light_grey')
+print('Type "h" or "help" for help')
 
-HelloWorld("print")
+while loopBreak == 'no':
+    command = input("Terminal > ")
+    if command == 'intro':
+        print(longStrings.introString)
+    if command == 'h' or command == 'help':
+        print(longStrings.helpString)
+    if command == 'exit':
+        loopBreak = 'yes'
+    if command == 'clear':
+        os.system('cls' if os.name == 'nt' else 'clear')
