@@ -2,9 +2,9 @@
 #Terminal based game about finding flags
 
 #note: add the f command and a progress saving system with a debug function to reset it and do some other stuff
+import json
 
 import Build.functions as functions
-import Build.jsonHandler as jsonHandler
 import config
 
 functions.artPrint('Seek & Poke','slant','light_grey')
@@ -12,7 +12,8 @@ print('Type "h" or "help" for help')
 
 while not config.loopBreak:
     c = input("Terminal > ")
-    commands = jsonHandler.readData('Build/jsons/commands.json')
+    with open('Build/jsons/commands.json') as f:
+        commands = json.load(f)
     doesExist = False
     for command in commands:
         if command['name'] == c:

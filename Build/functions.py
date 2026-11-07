@@ -1,5 +1,6 @@
 import sounddevice as sd
 import soundfile as sf
+import json
 import os
 from pyfiglet import Figlet
 from termcolor import colored
@@ -21,10 +22,30 @@ def playSound(file):
 def c_intro():
     print(longStrings.introString)
 def c_help():
-    print(longStrings.helpString)
+    print('----------\nCommands:')
+    with open('Build/jsons/commands.json') as f:
+        commands = json.load(f)
+    for command in commands:
+        text = ('- "'+command['name']+'" ')
+        try:
+            text = text+('or "'+command['alternative']+'"')
+        except:
+            pass
+        text = text+(': '+command['description'])
+        print(text)
+    print('----------')
 def c_exit():
     config.loopBreak = True
 def c_clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 def c_flag():
-    print("Command not ready yet")
+    flag = input()
+    if flag == 'dunkin13zbj':
+        with open('Build/jsons/save.json') as f:
+            save = json.load(f)
+        if not save['flags']['flag1']:
+            save['flags']['flag1'] = True
+            save['flags']['found'] = save['flags']['found'] + 1
+            with open('Build/jsons/save.json', 'w') as f:
+                json.dump(save, f, indent=4, sort_keys=True)
+            print(str(save['flags']['found'])+'/2')
