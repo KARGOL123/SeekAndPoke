@@ -7,6 +7,7 @@ helpString = ('----------'
               '\n- "h" or "help": Shows you a list of commands'
               '\n- "exit": Closes Seek & Poke'
               '\n- "clear": Clears the terminal'
+              '\n- "f": ???'
               '\n----------')
 
 introString = ("----------"

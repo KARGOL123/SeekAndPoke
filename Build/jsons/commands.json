@@ -1,0 +1,29 @@
+[
+  {
+    "name": "intro",
+    "description": "Introduces you to the game.",
+    "function": "c_intro"
+  },
+  {
+    "name": "h",
+    "alternative": "help",
+    "description": "Shows you a list of commands",
+    "function": "c_help"
+  },
+  {
+    "name": "exit",
+    "description": "Closes Seek & Poke",
+    "function": "c_exit"
+  },
+  {
+    "name": "clear",
+    "description": "Clears the terminal",
+    "function": "c_clear"
+  },
+  {
+    "name": "f",
+    "description": "???",
+    "secretDescription": "Input for the flags",
+    "function": "c_flag"
+  }
+]
