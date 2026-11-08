@@ -1,7 +1,7 @@
 #Author KARGOL
 #Terminal based game about finding flags
 
-#note: add the f command and a progress saving system with a debug function to reset it and do some other stuff
+#note: make the second flag
 import json
 
 import Build.functions as functions

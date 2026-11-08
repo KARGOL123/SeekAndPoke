@@ -24,6 +24,17 @@
     "name": "f",
     "description": "???",
     "secretDescription": "Input for the flags",
+    "unlockFlag": "flag1",
     "function": "c_flag"
+  },
+  {
+    "name": "debug",
+    "description": "A debug tool for me, it may break the code if used incorectly.",
+    "function": "c_debug"
+  },
+  {
+    "name": "prog",
+    "description": "Shows you your proggres",
+    "function": "c_prog"
   }
 ]
