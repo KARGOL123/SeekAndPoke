@@ -36,5 +36,11 @@
     "name": "prog",
     "description": "Shows you your proggres",
     "function": "c_prog"
+  },
+  {
+    "name": "whoami",
+    "description": "Shows current user",
+    "function": "c_whoami",
+    "syntaxes": ["Albert"]
   }
 ]
