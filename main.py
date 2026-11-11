@@ -1,7 +1,7 @@
 #Author KARGOL
 #Terminal based game about finding flags
 
-#note:finish the second flag
+#note:finish the second flag and finish the syntax reading thing for functions
 import json
 
 
@@ -27,7 +27,9 @@ while not config.loopBreak:
                     print('This command does not support any syntaxes')
                     break
                 elif functions.syntaxCheck(command,syntaxCount,c):
-                    getattr(functions, command['function'])()
+                    syntaxes = c.split(None)
+                    syntaxes.pop(0)
+                    getattr(functions, command['function'])(syntaxes)
                     break
                 else:
                     print("Syntax error")
@@ -44,7 +46,9 @@ while not config.loopBreak:
                             print('This command does not support any syntaxes')
                             break
                         elif functions.syntaxCheck(command, syntaxCount, c):
-                            getattr(functions, command['function'])()
+                            syntaxes = c.split(None)
+                            syntaxes.pop(0)
+                            getattr(functions, command['function'])(syntaxes)
                             break
                         else:
                             print("Syntax error")

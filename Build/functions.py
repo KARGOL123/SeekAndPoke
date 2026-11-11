@@ -175,12 +175,22 @@ def c_prog():
             if flag['found']:
                 flagsFound = flagsFound + 1
         print('You have found',str(flagsFound)+'/'+str(flagsCount),'flags')
-def c_whoami():
-    print(os.getlogin())
-
+def c_whoami(*syntaxes):
+    try: syntax1 = syntaxes[0][0]
+    except: syntax1 = None
+    if syntax1 == 'Albert':
+        print('Hey Albert!')
+        with open(flagsJson) as f:
+            flags = json.load(f)
+        print('FLAG2:',flags[1]['key'])
+    else:
+        print(os.getlogin())
 #flag functions
 
 def f_one():
     Path('C:/users/'+os.getlogin()+'/Desktop/Whoami.txt').write_text(longStrings.whoamiString)
     playSound('Assets/Music/somethinghappend.wav')
     artPrint('A new file appeared on your desktop!', 'small', 'green')
+def f_two():
+    playSound('Assets/Music/somethinghappend.wav')
+    artPrint('Congrats!','small','green')

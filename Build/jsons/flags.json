@@ -1,13 +1,14 @@
 [
     {
-        "found": true,
+        "found": false,
         "function": "f_one",
-        "key": "&EGvrLup",
+        "key": "",
         "name": "flag1"
     },
     {
         "found": false,
-        "key": "aBF@zZWo",
+        "function": "f_two",
+        "key": "",
         "name": "flag2"
     }
 ]
