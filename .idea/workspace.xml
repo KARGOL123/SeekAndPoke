@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c7a1ac-72f5-4ced-89f4-9ce171bbf717" name="Changes" comment="Flag 2 now works but for now progression ends at that point. Functions can now use syntaxes, but it's not modular yet.">
+    <list default="true" id="e1c7a1ac-72f5-4ced-89f4-9ce171bbf717" name="Changes" comment="Added a str and int functionality for syntaxes and a cipher command with just cesar cipher for now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Build/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Build/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Build/jsons/commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/Build/jsons/commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Build/jsons/flags.json" beforeDir="false" afterPath="$PROJECT_DIR$/Build/jsons/flags.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Build/longStrings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Build/longStrings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -166,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794400666343</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added a str and int functionality for syntaxes and a cipher command with just cesar cipher for now">
+      <option name="closed" value="true" />
+      <created>1794748178595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1794748178595</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +185,7 @@
     <MESSAGE value="The f command now works, also forgot to add a comment to last commission but the help command is now modular, added a debug command for me and a prog command to show progress" />
     <MESSAGE value="FINALLY got syntax detection to work after LOTS of troubleshooting, &#10;and I'm so proud of it. Right now I'm not using its full potential, but it will be very usefull in the future" />
     <MESSAGE value="Flag 2 now works but for now progression ends at that point. Functions can now use syntaxes, but it's not modular yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Flag 2 now works but for now progression ends at that point. Functions can now use syntaxes, but it's not modular yet." />
+    <MESSAGE value="Added a str and int functionality for syntaxes and a cipher command with just cesar cipher for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a str and int functionality for syntaxes and a cipher command with just cesar cipher for now" />
   </component>
 </project>

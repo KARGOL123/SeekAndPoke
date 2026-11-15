@@ -3,6 +3,7 @@ import soundfile as sf
 import random
 import json
 import os
+import re
 from pyfiglet import Figlet
 from termcolor import colored
 from pathlib import Path
@@ -36,7 +37,8 @@ def flagSetup():
     with open(flagsJson, 'w') as f:
         json.dump(flags, f, indent=4, sort_keys=True)
 def countWords(string):
-    words = string.split(None)
+    words = re.findall(r'"([^"]*)"|(\S+)', string)
+    words = [a or b for a, b in words]
     wordCount = 0
     for i in words:
         wordCount = wordCount+1
@@ -50,7 +52,9 @@ def syntaxCheck(command,syntaxCount,c):
     for i in range(syntaxCount):
         correctSyntax = False
         finalSyntax = False
-        csc = c.split(None)[i + 1]
+        csc = re.findall(r'"([^"]*)"|(\S+)', c)
+        csc = [a or b for a, b in csc]
+        csc = csc[i + 1]
         try:
             count = -1
             for syn in syntaxLayer:
@@ -70,7 +74,6 @@ def syntaxCheck(command,syntaxCount,c):
                 elif syn == 'int':
                     try:
                         int(csc)
-                        print('HI')
                         correctSyntax = True
                         finalSyntax = True
                         break
@@ -131,7 +134,7 @@ def cesar(text,value,decrypt):
         for char2 in UC:
             if char == char2:
                 if decrypt:
-                    decryptedText = decryptedText + UC[(count - value) % len(UC)]
+                    decryptedText = decryptedText + UC[(count - value) % len(UC)] #this equation was written with AI
                     found = True
                     break
                 else:
