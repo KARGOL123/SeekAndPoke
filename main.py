@@ -1,7 +1,7 @@
 #Author KARGOL
 #Terminal based game about finding flags
 
-#note:finish the second flag and finish the syntax reading thing for functions
+#note:make the third flag, make reading the syntaxes modular
 import json
 
 

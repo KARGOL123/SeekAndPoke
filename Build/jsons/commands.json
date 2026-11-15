@@ -22,9 +22,7 @@
   },
   {
     "name": "f",
-    "description": "???",
-    "secretDescription": "Input for the flags",
-    "unlockFlag": "flag1",
+    "description": "Gives you an input for the flags",
     "function": "c_flag"
   },
   {
@@ -41,6 +39,14 @@
     "name": "whoami",
     "description": "Shows current user",
     "function": "c_whoami",
+    "secretDescription": "Shows current user (takes syntaxes)",
+    "unlockFlag": "flag1",
     "syntaxes": ["Albert"]
+  },
+  {
+    "name": "cipher",
+    "function": "c_cipher",
+    "description": "Decrypts or encrypts what you input after pressing enter in various ciphers. (Takes syntaxes)",
+    "syntaxes": [{"cesar": [{"str": [{"int": ["d","e"]}]}]}]
   }
 ]

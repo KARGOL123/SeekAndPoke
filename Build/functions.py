@@ -59,13 +59,55 @@ def syntaxCheck(command,syntaxCount,c):
                     correctSyntax = True
                     finalSyntax = True
                     break
+                elif syn == 'str':
+                    try:
+                        str(csc)
+                        correctSyntax = True
+                        finalSyntax = True
+                        break
+                    except:
+                        pass
+                elif syn == 'int':
+                    try:
+                        int(csc)
+                        print('HI')
+                        correctSyntax = True
+                        finalSyntax = True
+                        break
+                    except:
+                        pass
                 else:
                     try:
+                        syn['str']
+                        try:
+                            str(csc)
+                            correctSyntax = True
+                            syntaxLayer = getitem(syntaxLayer, count)
+                            syntaxLayer = getitem(syntaxLayer, 'str')
+                            break
+                        except:
+                            pass
+                    except:
+                        pass
+                    try:
+                        syn['int']
+                        try:
+                            int(csc)
+                            correctSyntax = True
+                            syntaxLayer = getitem(syntaxLayer, count)
+                            syntaxLayer = getitem(syntaxLayer, 'int')
+                            break
+                        except:
+                            pass
+                    except:
+                        pass
+                    try:
                         syn[csc]
-                        correctSyntax = True
-                        syntaxLayer = getitem(syntaxLayer, count)
-                        syntaxLayer = getitem(syntaxLayer, csc)
-                        break
+                        if csc != 'int':
+                            correctSyntax = True
+                            syntaxLayer = getitem(syntaxLayer, count)
+                            syntaxLayer = getitem(syntaxLayer, csc)
+                            break
                     except:
                         pass
         except:
@@ -79,6 +121,41 @@ def syntaxCheck(command,syntaxCount,c):
         else:
             break
     return allSyntaxesCorrect
+def cesar(text,value,decrypt):
+    UC = longStrings.alphabetUpperCase
+    LC = longStrings.alphabetLowerCase
+    decryptedText = ''
+    for char in text:
+        found = False
+        count = 0
+        for char2 in UC:
+            if char == char2:
+                if decrypt:
+                    decryptedText = decryptedText + UC[(count - value) % len(UC)]
+                    found = True
+                    break
+                else:
+                    decryptedText = decryptedText + UC[(count + value) % len(UC)]
+                    found = True
+                    break
+            count = count + 1
+        count = 0
+        for char2 in LC:
+            if char == char2:
+                if decrypt:
+                    decryptedText = decryptedText + LC[(count - value) % len(UC)]
+                    found = True
+                    break
+                else:
+                    decryptedText = decryptedText + LC[(count + value) % len(UC)]
+                    found = True
+                    break
+            count = count + 1
+        if not found:
+            decryptedText = decryptedText + char
+    return(decryptedText)
+
+
 
 #command functions
 
@@ -163,6 +240,11 @@ def c_debug():
                 print("Why do you even bother using this command?")
     elif d == 'f_one':
         f_one()
+    elif d == 'cesar':
+        text = str(input('Input text:'))
+        value = int(input('Input value:'))
+        decrypt = input("decrypt?: ")
+        print(cesar(text,value,decrypt))
     else:
         print("Why do you even bother using this command?")
 def c_prog():
@@ -185,6 +267,26 @@ def c_whoami(*syntaxes):
         print('FLAG2:',flags[1]['key'])
     else:
         print(os.getlogin())
+def c_cipher(*syntaxes):
+    try: syntax1 = syntaxes[0][0]
+    except: syntax1 = None
+    try: syntax2 = syntaxes[0][1]
+    except: syntax2 = None
+    try: syntax3 = syntaxes[0][2]
+    except: syntax3 = None
+    try: syntax4 = syntaxes[0][3]
+    except: syntax4 = None
+
+    if syntax1 == 'cesar':
+        if not(syntax2==None or syntax3==None or syntax4==None):
+            decrypt = False
+            if syntax4 == 'd':
+                decrypt = True
+            print(cesar(syntax2,int(syntax3),decrypt))
+        else:
+            print('This command needs more syntaxes!')
+    else:
+        print('This command needs more syntaxes!')
 #flag functions
 
 def f_one():
